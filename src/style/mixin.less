@@ -1,0 +1,46 @@
+@base-color: #975ec9;
+@common-wd: 30px;
+@assets-img: '../../public/images/';
+@base-red: #f20500;
+
+/**
+ * @description: 设置字体样式
+ * @param {
+     @font-size:字体大小(带像素单位)
+     @color:字体颜色
+     @text-align:对齐方式
+ }
+ * @return {*}
+ */
+.font(@font-size, @color:#333, @text-align:left) when (ispixel(@font-size)),(iscolor(@color)),(iskeyword(@text-align)) {
+  font-size: @font-size;
+  color: @color;
+  text-align: @text-align;
+}
+
+/**
+ * @description: 设置flex布局
+ * @param {
+     @justify-content: 每个项目在主轴的对齐方式
+     @align-item: 每个项目在交叉轴的对齐方式
+ }
+ * @return {*}
+ */
+.flex(@justify-content:center, @align-items:center) when (iskeyword(@justify-content)), (iskeyword(@align-items)) {
+  display: flex;
+  justify-content: @justify-content;
+  align-items: @align-items;
+}
+
+/**
+ * @description: 设置容器宽高
+ * @param {
+     @w:容器宽度
+     @h:容器高度
+ }
+ * @return {*}
+ */
+.wh(@w, @h) when (ispixel(@w))or(ispercentage(@w)), (ispixel(@h))or(ispercentage(@h)) {
+  width: @w;
+  height: @h;
+}

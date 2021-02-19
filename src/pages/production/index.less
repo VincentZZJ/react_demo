@@ -1,0 +1,37 @@
+@import (reference) '../../style/mixin.less';
+
+.proContainer {
+  padding-top: 88px;
+  .proBox {
+    padding-top: @common-wd;
+    > ul {
+      background-color: #fff;
+      .itemLi {
+        min-height: 140px;
+        padding: @common-wd;
+        border-bottom: 1px solid #eee;
+        .flex(space-between);
+        .font(32px);
+        .selectBtn,
+        .numBtn {
+          display: inline-block;
+          border: 1px solid #ccc;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 50%;
+          margin: auto 10px;
+          cursor: pointer;
+        }
+        .numBtnDisabled {
+          cursor: not-allowed;
+          color: #ccc;
+        }
+        .selected {
+          background-color: @base-color;
+        }
+      }
+    }
+  }
+}

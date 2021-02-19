@@ -1,0 +1,73 @@
+@import (reference) '../../style/mixin.less';
+
+.homeContainer {
+  padding-top: 88px;
+  .formTitle {
+    margin: 0;
+    .font(36px,@base-color);
+    padding: 30px;
+  }
+  .homeForm {
+    background-color: #fff;
+    .homeFormItem {
+      height: 120px;
+      line-height: 120px;
+      border-bottom: 1px solid #eee;
+      span {
+        .font(32px,#555);
+        margin-left: 30px;
+        margin-right: 20px;
+      }
+      input {
+        border: none;
+        font-size: 30px;
+      }
+      ::-webkit-input-placeholder {
+        color: #ccc;
+      }
+    }
+  }
+  .homeSelectBtn {
+    background-color: #fff;
+    display: block;
+    min-height: 120px;
+    .font(42px,#ccc,center);
+    .flex;
+  }
+  .homeProList {
+    width: 92%;
+    margin: 0 10px;
+    li {
+      .flex(space-between);
+      .font(20px,#333,center);
+      span {
+        flex: 1;
+      }
+    }
+  }
+  .homeFileUploadBtn {
+    position: relative;
+    input[type='file'] {
+      position: absolute;
+      .wh(100%,100%);
+      background-color: red;
+      top: 0;
+      right: 0;
+      opacity: 0;
+    }
+  }
+  .imgPreview {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+  }
+  .homeSubmitBtn {
+    background-color: @base-color;
+    .flex;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    .wh(90%,80px);
+    .font(40px,#fff);
+  }
+}

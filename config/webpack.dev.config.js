@@ -1,7 +1,7 @@
 /*
  * @Author: Vincent
  * @Date: 2021-01-11 13:49:11
- * @LastEditTime: 2021-01-15 15:46:15
+ * @LastEditTime: 2021-01-28 17:26:51
  * @LastEditors: Vincent
  * @Description:
  */
@@ -9,9 +9,12 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.base.config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const apiMocker = require('mocker-api');
+// const autoprefixer = require('autoprefixer');
+// const px2rem = require('postcss-px2rem');
 
 module.exports = merge(baseConfig, {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   //   入口文件
   entry: ['react-hot-loader/patch', path.resolve(__dirname, '../src/index.js')],
   //   输出到dist目录
@@ -51,7 +54,7 @@ module.exports = merge(baseConfig, {
               modules: false,
             },
           },
-          'postcss-loader',
+          // 'postcss-loader',
           {
             loader: 'less-loader',
             options: {
@@ -84,7 +87,15 @@ module.exports = merge(baseConfig, {
   },
   // 本地运行
   devServer: {
+    host: process.env.HOST,
+    port: 8080,
+    compress: true,
+    stats: 'errors-only',
+    hot: true,
     contentBase: path.resolve(__dirname, '../dist'),
+    before(app) {
+      apiMocker(app, path.resolve(__dirname, '../mock/index.js'));
+    },
   },
   // 解析
   resolve: {

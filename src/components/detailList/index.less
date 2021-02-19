@@ -1,0 +1,36 @@
+@import (reference) '../../style/mixin.less';
+
+.listBox {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #fff;
+  .boxTop {
+    // height: 40px;
+    // line-height: 40px;
+    .font(32px);
+    display: flex;
+    justify-content: space-between;
+    > div:first-child {
+      color: #ccc;
+    }
+    > div:last-child {
+      color: red;
+      font-weight: bold;
+    }
+  }
+  .boxContent {
+    padding: 4px 0;
+    margin: 10px 0;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    > div {
+      .font(28px);
+    }
+  }
+  .boxBottom {
+    .font(28px);
+  }
+  .green {
+    color: rgb(92, 182, 96) !important;
+  }
+}

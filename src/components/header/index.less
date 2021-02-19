@@ -1,0 +1,65 @@
+@import (reference) '../../style/mixin.less';
+
+.headerComtainer {
+  .flex(space-between);
+  background-color: @base-color;
+  padding: 0 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  .wh(100%,88px);
+  span {
+    .font(34px,#fff);
+    &:nth-child(2) {
+      .font(40px,#fff);
+    }
+  }
+}
+.navSlideList {
+  position: fixed;
+  background-color: #fff;
+  top: 88px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  .wh(100%,100%);
+  display: flex;
+  flex-direction: column;
+  a {
+    .font(32px);
+    border-bottom: 1px solid #ddd;
+    margin: 0 @common-wd;
+    padding: 35px 20px;
+    position: relative;
+    // &:before {
+    //   position: absolute;
+    //   right: 10px;
+    //   top: 50%;
+    //   transform: translate3d(0, -50%, 0);
+    //   color: #666;
+    // }
+    &::after {
+      content: '>';
+      position: absolute;
+      right: 10px;
+      width: 20px;
+      .font(32px);
+    }
+  }
+}
+.nav-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+.nav-enter.nav-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: transform 300ms;
+}
+.nav-leave {
+  transform: translate3d(0, 0, 0);
+}
+.nav-leave.nav-leave-active {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 300ms;
+}

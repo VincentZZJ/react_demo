@@ -1,0 +1,92 @@
+/*
+ * @Author: Vincent
+ * @Date: 2021-01-25 15:01:03
+ * @LastEditTime: 2021-02-03 11:09:23
+ * @LastEditors: Vincent
+ * @Description: 样式初始化
+ */
+/* 清除内外边距 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+div,
+p,
+ul,
+li,
+ol,
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+/* 修复img默认位置和IE边框 */
+img {
+  vertical-align: top;
+  border: none;
+}
+/* 去除获取焦点时的虚线 */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+/* 重置部分表单圆角和内阴影 */
+input[type='text'],
+input[type='file'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+textarea {
+  -webkit-appearance: none;
+}
+/*去除文本框上下箭头*/
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* 设置iconfont标签font-family */
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'iconfont';
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* a标签默认设置 */
+a {
+  text-decoration: none;
+  /*ios禁止页面在新窗口打开*/
+  -webkit-touch-callout: none;
+}
+/* 默认样式 */
+body {
+  background-color: #f5f5f5;
+  font-size: inherit;
+}
+em,
+i {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+html,
+body {
+  height: 100%;
+}
+.common-con-top {
+  margin-top: 88px;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
